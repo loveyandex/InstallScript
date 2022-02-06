@@ -62,6 +62,13 @@ sudo add-apt-repository "deb http://mirrors.kernel.org/ubuntu/ xenial main"
 sudo apt-get update
 sudo apt-get upgrade -y
 
+
+echo -e "\n---- ---- ---- Installing nodeJS NPM and rtlcss for LTR support ------- ---- ---- ---- ---- ---- ---- ---- رر-"
+sudo apt-get install nodejs npm -y
+sudo npm install -g rtlcss
+
+
+
 #--------------------------------------------------
 # Install PostgreSQL Server
 #--------------------------------------------------
@@ -74,9 +81,7 @@ sudo su - postgres -c "createuser -s $OE_USER" 2> /dev/null || true
 #--------------------------------------------------
 # Install Dependencies
 #--------------------------------------------------
-echo -e "\n---- Installing nodeJS NPM and rtlcss for LTR support ----"
-sudo apt-get install nodejs npm -y
-sudo npm install -g rtlcss
+
 
 echo -e "\n--- Installing Python 3 + pip3 --"
 sudo apt-get install git python3 python3-pip build-essential wget python3-dev python3-venv python3-wheel libxslt-dev libzip-dev libldap2-dev libsasl2-dev python3-setuptools node-less libpng12-0 libjpeg-dev gdebi -y
